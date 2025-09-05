@@ -1,1 +1,41 @@
-₿
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Soon</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: #f7931a;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+
+    .center {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .big-text {
+      font-weight: 800;
+      font-size: clamp(48px, 18vw, 160px);
+      letter-spacing: 0.02em;
+      color: #fff;
+      margin: 0;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .btc-symbol::before {
+      content: "₿ ";
+    }
+  </style>
+</head>
+<body>
+  <main class="center" role="main">
+    <h1 class="big-text btc-symbol">Soon</h1>
+  </main>
+</body>
+</html>
