@@ -6,8 +6,8 @@
   <title>Bitecoin Hub - Coming Soon</title>
   <style>
     body {
-      background-color: #ffffff;
-      color: #000000;
+      background-color: #0d0d0d;
+      color: #f5f5f5;
       font-family: Arial, sans-serif;
       display: flex;
       flex-direction: column;
@@ -17,41 +17,48 @@
       margin: 0;
       text-align: center;
       animation: fadeIn 2s ease-in;
+      background-image: url("https://cryptologos.cc/logos/bitcoin-btc-logo.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 200px;
+      background-blend-mode: overlay;
     }
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
     h1 {
-      font-size: 3em;
+      font-size: 3.5em;
       font-weight: bold;
       margin-bottom: 10px;
+      color: #f7931a;
+      text-shadow: 0 0 20px rgba(247,147,26,0.7);
     }
     p {
-      font-size: 1.2em;
+      font-size: 1.3em;
       margin: 10px 0;
     }
     .highlight {
       font-weight: bold;
       color: #f7931a;
     }
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 20px 0;
-      font-size: 1.1em;
-    }
     .countdown {
-      font-size: 2em;
+      font-size: 2.5em;
       font-weight: bold;
       margin-top: 20px;
       color: #f7931a;
+      text-shadow: 0 0 15px rgba(247,147,26,0.8);
+      animation: blink 1s infinite alternate;
+    }
+    @keyframes blink {
+      from { opacity: 1; }
+      to { opacity: 0.7; }
     }
     footer {
       position: absolute;
       bottom: 20px;
       font-size: 0.9em;
-      color: #666;
+      color: #999;
     }
   </style>
 </head>
