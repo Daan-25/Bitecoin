@@ -1,41 +1,98 @@
-<!doctype html>
-<html lang="nl">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>₿ Soon</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bitecoin Hub - Coming Soon</title>
   <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      background: #f7931a;
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    }
-
-    .center {
-      min-height: 100vh;
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: Arial, sans-serif;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-    }
-
-    .big-text {
-      font-weight: 800;
-      font-size: clamp(48px, 18vw, 160px);
-      letter-spacing: 0.02em;
-      color: #fff;
+      height: 100vh;
       margin: 0;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+      text-align: center;
+      animation: fadeIn 2s ease-in;
     }
-
-    .btc-symbol::before {
-      content: "₿ ";
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    h1 {
+      font-size: 3em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
+    .highlight {
+      font-weight: bold;
+      color: #f7931a;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+      font-size: 1.1em;
+    }
+    .countdown {
+      font-size: 2em;
+      font-weight: bold;
+      margin-top: 20px;
+      color: #f7931a;
+    }
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9em;
+      color: #666;
     }
   </style>
 </head>
 <body>
-  <main class="center" role="main">
-    <h1 class="big-text btc-symbol">Soon</h1>
-  </main>
+  <h1>🚀 Bitecoin Hub</h1>
+  <p class="highlight">Something big is coming soon!</p>
+  <p>Stay tuned for:</p>
+  <ul>
+    <li>✔️ The Bitecoin Token</li>
+    <li>✔️ Blockchain Testnet</li>
+    <li>✔️ Demo dApp</li>
+    <li>✔️ Community on Discord & Twitter</li>
+    <li>✔️ Official Whitepaper</li>
+  </ul>
+
+  <div class="countdown" id="countdown">Loading countdown...</div>
+
+  <footer>
+    © 2025 Bitecoin Hub — All rights reserved.
+  </footer>
+
+  <script>
+    const launchDate = new Date("2025-12-01T00:00:00").getTime();
+
+    const timer = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = "🚀 We are live!";
+      } else {
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML =
+          days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+      }
+    }, 1000);
+  </script>
 </body>
 </html>
